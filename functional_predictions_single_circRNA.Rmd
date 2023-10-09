@@ -478,7 +478,13 @@ if (parameters[1] == "MRO") {
     
     
     # Save at png
-    ggsave(circ_plot, file=paste0(output_dir, "circplot_all_predictions.png"), width=11, height=11, dpi = 600)
+    ggsave(circ_plot, file=paste0(output_dir, "circplot_all_predictions.png"), width=22, height=22, dpi = 600)
+    save.image(file =paste0(output_dir, "circplot_all_predictions.png.RData"))
+    save(circ_plot,file=paste0(output_dir, "circplot_all_predictions.png.rObj"))
+    writeLines(capture.output(sessionInfo()), paste0(output_dir, "EDDIE_SESSION_INFO.txt"))
+
+
+
 
 }
 
